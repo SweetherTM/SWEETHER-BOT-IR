@@ -226,30 +226,20 @@ function create_config( )
     "leave_ban",
     "admin"
     },
-    sudo_users = {110626080,103649648,143723991,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {227079073},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v2 - Open Source
-An advance Administration bot based on yagop/telegram-bot 
+    about_text = [[Sweether Bot v 3.5 - open source
 
-https://github.com/SEEDTEAM/TeleSeed
-
-Our team!
-Alphonse (@Iwals)
-I M /-\ N (@Imandaneshi)
-Siyanew (@Siyanew)
-Rondoozle (@Potus)
-Seyedan (@Seyedan25)
+https://github.com/SweetherTM/SWEETHER-BOT-IR.git
 
 Special thanks to:
-Juan Potato
-Siyanew
-Topkecleon
-Vamptacus
+    saeed rahmani
+    mohammad zarei
+    david pro [I am]
 
-Our channels:
-English: @TeleSeedCH
-Persian: @IranSeed
+Channel:
+    @SweetherTM
 ]],
     help_text_realm = [[
 Realm Commands:
