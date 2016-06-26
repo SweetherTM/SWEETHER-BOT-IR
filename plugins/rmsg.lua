@@ -9,23 +9,23 @@ local function history(extra, suc, result)
   end
 end
 local function run(msg, matches)
-  if matches[1] == 'clean' and is_owner(msg) then
+  if matches[1] =='حذف' and is_owner(msg) then
     if msg.to.type == 'channel' then
-      if tonumber(matches[2]) > 10000 or tonumber(matches[2]) < 1 then
-        return "تعداد بیشتر از 1 مجاز است"
+      if tonumber(matches[2]) > 100000000 or tonumber(matches[2]) < 1 then
+        return "تعداد بیشتر از 1 و کمتر از 100,000,000 مجازاست."
       end
       get_history(msg.to.peer_id, matches[2] + 1 , history , {chatid = msg.to.peer_id, con = matches[2]})
     else
-      return "فقط در سوپرگروه ممکن است"
+      return "فقط در سوپرگروه ممکن است."
     end
   else
-    return "شما دسترسی ندارید"
+    return "شما دسترسی ندارید."
   end
 end
 
 return {
     patterns = {
-        '^[!/#](clean) msg (%d*)$'
+        '^(حذف) (%d*)$'
     },
     run = run
 }
