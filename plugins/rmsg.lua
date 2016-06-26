@@ -9,10 +9,10 @@ local function history(extra, suc, result)
   end
 end
 local function run(msg, matches)
-  if matches[1] == 'pbt' and is_owner(msg) then
+  if matches[1] == 'clean' and is_owner(msg) then
     if msg.to.type == 'channel' then
-      if tonumber(matches[2]) > 100000 or tonumber(matches[2]) < 1 then
-        return "تعداد بیشتر از 1 و کمتر از 100000 امکان پذیر است."
+      if tonumber(matches[2]) > 10000 or tonumber(matches[2]) < 1 then
+        return "تعداد بیشتر از 1 مجاز است"
       end
       get_history(msg.to.peer_id, matches[2] + 1 , history , {chatid = msg.to.peer_id, con = matches[2]})
     else
@@ -25,7 +25,7 @@ end
 
 return {
     patterns = {
-        '^حذف msg (%d*)$'
+        '^[!/#](clean) msg (%d*)$'
     },
     run = run
 }
