@@ -487,11 +487,11 @@ local function lock_group_english(msg, data, target)
   end
   local group_english_lock = data[tostring(target)]['settings']['english']
   if group_english_lock == 'yes' then
-    return 'english is already locked'
+    return 'انگلیسی قفل شد ✅'
   else
     data[tostring(target)]['settings']['english'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'english has been locked'
+    return 'انگلیسی قفل شد ✅'
   end
 end
 
@@ -501,11 +501,11 @@ local function unlock_group_english(msg, data, target)
   end
   local group_english_lock = data[tostring(target)]['settings']['english']
   if group_english_lock == 'no' then
-    return 'english is not locked'
+    return 'انگلیسی باز شد ✅'
   else
     data[tostring(target)]['settings']['english'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'english has been unlocked'
+    return 'انگلیسی باز شد ✅'
   end
 end
 
@@ -515,11 +515,11 @@ local function lock_group_emoji(msg, data, target)
   end
   local group_emoji_lock = data[tostring(target)]['settings']['emoji']
   if group_emoji_lock == 'yes' then
-    return 'emoji is already locked'
+    return 'شکلک قفل شد ✅'
   else
     data[tostring(target)]['settings']['emoji'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'emoji has been locked'
+    return 'شکلک قفل شد ✅'
   end
 end
 
@@ -529,11 +529,11 @@ local function unlock_group_emoji(msg, data, target)
   end
   local group_emoji_lock = data[tostring(target)]['settings']['emoji']
   if group_emoji_lock == 'no' then
-    return 'emoji is not locked'
+    return 'شکلک باز شد ✅'
   else
     data[tostring(target)]['settings']['emoji'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'emoji has been unlocked'
+    return 'شکلک باز شد ✅'
   end
 end
 
@@ -543,11 +543,11 @@ local function lock_group_tag(msg, data, target)
   end
   local group_tag_lock = data[tostring(target)]['settings']['tag']
   if group_tag_lock == 'yes' then
-    return 'tag is already locked'
+    return 'تگ قفل شد ✅'
   else
     data[tostring(target)]['settings']['tag'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'tag has been locked'
+    return 'تگ قفل شد ✅'
   end
 end
 
@@ -557,11 +557,11 @@ local function unlock_group_tag(msg, data, target)
   end
   local group_tag_lock = data[tostring(target)]['settings']['tag']
   if group_tag_lock == 'no' then
-    return 'tag is not locked'
+    return 'تگ باز شد ✅'
   else
     data[tostring(target)]['settings']['tag'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'tag has been unlocked'
+    return 'تگ باز شد ✅'
   end
 end
 
@@ -571,11 +571,11 @@ local function unlock_group_all(msg, data, target)
   end
   local group_all_lock = data[tostring(target)]['settings']['all']
   if group_all_lock == 'no' then
-    return 'all setting is not locked'
+    return 'همه تنظیمات باز شد ✅'
   else
     data[tostring(target)]['settings']['all'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'all setting has been unlocked'
+    return 'همه تنظیمات باز شد ✅'
   end
 end
 
@@ -584,15 +584,15 @@ local function lock_group_spam(msg, data, target)
     return
   end
   if not is_owner(msg) then
-    return "Owners only!"
+    return "فقط مالک گروه قادر هست."
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
   if group_spam_lock == 'yes' then
-    return 'SuperGroup spam is already locked'
+    return 'ارسال اسپم در گروه قفل شد ✅'
   else
     data[tostring(target)]['settings']['lock_spam'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'SuperGroup spam has been locked'
+    return 'ارسال اسپم در گروه قفل شد ✅'
   end
 end
 
@@ -602,11 +602,11 @@ local function unlock_group_spam(msg, data, target)
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
   if group_spam_lock == 'no' then
-    return 'SuperGroup spam is not locked'
+    return 'ارسال اسپم در گروه باز شد ✅'
   else
     data[tostring(target)]['settings']['lock_spam'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'SuperGroup spam has been unlocked'
+    return 'ارسال اسپم در گروه باز شد ✅'
   end
 end
 
@@ -616,11 +616,11 @@ local function lock_group_flood(msg, data, target)
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'yes' then
-    return 'Flood is already locked'
+    return 'حساسیت اسپم قفل شد ✅'
   else
     data[tostring(target)]['settings']['flood'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Flood has been locked'
+    return 'حساسیت اسپم قفل شد ✅'
   end
 end
 
@@ -630,11 +630,11 @@ local function unlock_group_flood(msg, data, target)
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'no' then
-    return 'Flood is not locked'
+    return 'حساسیت اسپم باز شد ✅'
   else
     data[tostring(target)]['settings']['flood'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Flood has been unlocked'
+    return 'حساسیت اسپم باز شد ✅'
   end
 end
 
@@ -644,11 +644,11 @@ local function lock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'yes' then
-    return 'Arabic is already locked'
+    return 'صحبت به فارسی در گروه قفل شد ✅'
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Arabic has been locked'
+    return 'صحبت به فارسی در گروه قفل شد ✅'
   end
 end
 
@@ -658,11 +658,11 @@ local function unlock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'no' then
-    return 'Arabic/Persian is already unlocked'
+    return 'صحبت به فارسی در گروه باز شد ✅'
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Arabic/Persian has been unlocked'
+    return 'صحبت به فارسی در گروه باز شد ✅'
   end
 end
 
