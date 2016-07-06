@@ -1752,7 +1752,7 @@ local function run(msg, matches)
 			local function callback_link (extra , success, result)
 			local receiver = get_receiver(msg)
 				if success == 0 then
-					send_large_msg(receiver, '*مشکلی در ساخت لینک به وجود آمد.\nمن سازنده گروه نیستم.\n\nشما میتوانید با ارسال ثبت لینک لیتک گروه را ثبت کنید.')
+					send_large_msg(receiver, '*مشکلی در ساخت لینک به وجود آمد.\nمن سازنده گروه نیستم.\n\nشما میتوانید با ارسال ثبت لینک لینک گروه را ثبت کنید.')
 					data[tostring(msg.to.id)]['settings']['set_link'] = nil
 					save_data(_config.moderation.data, data)
 				else
@@ -1765,7 +1765,7 @@ local function run(msg, matches)
 			export_channel_link(receiver, callback_link, false)
 		end
 
-		if matches[1] == 'setlink' and is_owner(msg) then
+		if matches[1] == 'ثبت لینک' and is_owner(msg) then
 			data[tostring(msg.to.id)]['settings']['set_link'] = 'waiting'
 			save_data(_config.moderation.data, data)
 			return 'لطفا لینک جدید گروه را ارسال کنید.'
@@ -2696,30 +2696,30 @@ end
 
 return {
   patterns = {
-	"^[#!/]([Aa]dd)$",
-	"^[#!/]([Rr]em)$",
+	"^افزودن$",
+	"^حذف$",
 	"^[#!/]([Mm]ove) (.*)$",
-	"^[#!/]([Gg]pinfo)$",
-	"^[#!/]([Aa]dmins)$",
-	"^[#!/]([Oo]wner)$",
-	"^[#!/]([Mm]odlist)$",
-	"^[#!/]([Bb]ots)$",
-	"^[#!/]([Ww]ho)$",
-	"^[#!/]([Kk]icked)$",
-        "^[#!/]([Bb]lock) (.*)",
-	"^[#!/]([Bb]lock)",
-	    "^[#!/]([Kk]ick) (.*)",
-	"^[#!/]([Kk]ick)",
-	"^[#!/]([Tt]osuper)$",
-	"^[#!/]([Ii][Dd])$",
-	"^[#!/]([Ii][Dd]) (.*)$",
-	"^[#!/]([Kk]ickme)$",
-	"^[#!/]([Nn]ewlink)$",
-	"^[#!/]([Ss]etlink)$",
-	"^[#!/]([Ll]ink)$",
+	"^اطلاعات گروه$",
+	"^لیست مدیران$",
+	"^مالک گروه$",
+	"^لیست مدیران$",
+	"^ربات ها$",
+	"^آمار$",
+	"^اخراج شده ها$",
+        "^بلاک (.*)",
+	"^بلاک",
+	    "^اخراج (.*)",
+	"^اخراج",
+	"^به سوپرگروه$",
+	"^ایدی$",
+	"^ایدی (.*)$",
+	"^اخراج من$",
+	"^لینک جدید$",
+	"^ثبت لینک$",
+	"^لینک$",
 	"^[#!/]([Rr]es) (.*)$",
-	"^[#!/]([Ss]etadmin) (.*)$",
-	"^[#!/]([Ss]etadmin)",
+	"^ادمین کردن (.*)$",
+	"^ادمین کردن",
 	"^[#!/]([Dd]emoteadmin) (.*)$",
 	"^[#!/]([Dd]emoteadmin)",
 	"^[#!/]([Ss]etowner) (.*)$",
@@ -2729,27 +2729,27 @@ return {
 	"^[#!/]([Dd]emote) (.*)$",
 	"^[#!/]([Dd]emote)",
 	"^[#!/]([Ss]etname) (.*)$",
-	"^[#!/]([Ss]etabout) (.*)$",
-	"^[#!/]([Ss]etrules) (.*)$",
+	"^توضیحات (.*)$",
+	"^قوانین (.*)$",
 	"^[#!/]([Ss]etphoto)$",
 	"^[#!/]([Ss]etusername) (.*)$",
-	"^[#!/]([Dd]el)$",
-	"^[#!/]([Ll]ock) (.*)$",
-	"^[#!/]([Uu]nlock) (.*)$",
-	"^[#!/]([Mm]ute) ([^%s]+)$",
+	"^حذف$",
+	"^قفل کردن (.*)$",
+	"^باز کردن (.*)$",
+	"^سکوت ([^%s]+)$",
 	"^[#!/]([Uu]nmute) ([^%s]+)$",
-	"^[#!/]([Ss]ilent)$",
-	"^[#!/]([Ss]ilent) (.*)$",
+	"^سکوت$",
+	"^سکوت (.*)$",
 	"^[#!/]([Uu]nsilent)$",
 	"^[#!/]([Uu]nsilent) (.*)$",
-	"^[#!/]([Pp]ublic) (.*)$",
-	"^[#!/]([Ss]ettings)$",
-	"^[#!/]([Rr]ules)$",
+	"^عمومی (.*)$",
+	"^تنظیمات$",
+	"^قوانین$",
 	"^[#!/]([Ss]etflood) (%d+)$",
 	"^[#!/]([Cc]lean) (.*)$",
-	"^[#!/]([Hh]elp)$",
-	"^[#!/]([Mm]uteslist)$",
-	"^[#!/]([Ss]ilentlist)$",
+	"^راهنما$",
+	"^لیست سکوت$",
+	"^لیست سکوت$",
     "[#!/](mp) (.*)",
 	"[#!/](md) (.*)",
     "^(https://telegram.me/joinchat/%S+)$",
