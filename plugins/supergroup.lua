@@ -1855,7 +1855,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'حذف از ادمینی' then
+		if matches[1] == 'حذف ادمین' then
 			if not is_support(msg.from.id) and not is_owner(msg) then
 				return
 			end
@@ -2453,65 +2453,65 @@ local function run(msg, matches)
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." has been muted"
+					return msg_type.." به لیست سکوت اضافه شد ✅"
 				else
-					return  "SuperGroup mute "..msg_type.." is already on"
+					return  msg_type.." به لیست سکوت اضافه شد ✅"
 				end
 			end
-			if matches[2] == 'gifs' then
+			if matches[2] == 'گیف' then
 			local msg_type = 'Gifs'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." have been muted"
+					return msg_type.." به لیست سکوت اضافه شد ✅"
 				else
-					return "SuperGroup mute "..msg_type.." is already on"
+					return msg_type.." به لیست سکوت اضافه شد ✅"
 				end
 			end
-			if matches[2] == 'documents' then
+			if matches[2] == 'فایل' then
 			local msg_type = 'Documents'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." have been muted"
+					return msg_type.." به لیست سکوت اضافه شد ✅"
 				else
-					return "SuperGroup mute "..msg_type.." is already on"
+					return msg_type.." به لیست سکوت اضافه شد ✅"
 				end
 			end
-			if matches[2] == 'text' then
+			if matches[2] == 'متن' then
 			local msg_type = 'Text'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." has been muted"
+					return msg_type.." به لیست سکوت اضافه شد ✅"
 				else
-					return "Mute "..msg_type.." is already on"
+					return msg_type.." به لیست سکوت اضافه شد ✅"
 				end
 			end
-			if matches[2] == 'all' then
+			if matches[2] == 'همه' then
 			local msg_type = 'All'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return "Mute "..msg_type.."  has been enabled"
+					return msg_type.." تنظیمات به لیست سکوت اضافه شد ✅"
 				else
-					return "Mute "..msg_type.." is already on"
+					return msg_type.." تنظیمات به لیست سکوت اضافه شد ✅"
 				end
 			end
 		end
-		if matches[1] == 'unmute' and is_momod(msg) then
+		if matches[1] == 'باز کردن' and is_momod(msg) then
 			local chat_id = msg.to.id
-			if matches[2] == 'audio' then
+			if matches[2] == 'صدا' then
 			local msg_type = 'Audio'
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
 					unmute(chat_id, msg_type)
-					return msg_type.." has been unmuted"
+					return msg_type.." از لیست سکوت حذف شد ✅"
 				else
-					return "Mute "..msg_type.." is already off"
+					return msg_type.." از لیست سکوت حذف شد ✅"
 				end
 			end
-			if matches[2] == 'photo' then
+			if matches[2] == 'عکس' then
 			local msg_type = 'Photo'
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
@@ -2574,7 +2574,7 @@ local function run(msg, matches)
 		end
 
 
-		if matches[1] == "silent" or matches[1] == "unsilent" and is_momod(msg) then
+		if matches[1] == "سکوت" or matches[1] == "آزاد" and is_momod(msg) then
 			local chat_id = msg.to.id
 			local hash = "mute_user"..chat_id
 			local user_id = ""
@@ -2720,33 +2720,33 @@ return {
 	"^[#!/]([Rr]es) (.*)$",
 	"^ادمین کردن (.*)$",
 	"^ادمین کردن",
-	"^[#!/]([Dd]emoteadmin) (.*)$",
-	"^[#!/]([Dd]emoteadmin)",
-	"^[#!/]([Ss]etowner) (.*)$",
-	"^[#!/]([Ss]etowner)$",
-	"^[#!/]([Pp]romote) (.*)$",
-	"^[#!/]([Pp]romote)",
-	"^[#!/]([Dd]emote) (.*)$",
-	"^[#!/]([Dd]emote)",
-	"^[#!/]([Ss]etname) (.*)$",
+	"^حذف ادمین (.*)$",
+	"^حذف ادمین$",
+	"^مالک گروه (.*)$",
+	"^مالک گروه$",
+	"^ادمین کردن (.*)$",
+	"^ادمین کردن",
+	"^حذف ادمین (.*)$",
+	"^حذف ادمین",
+	"^نام گروه (.*)$",
 	"^توضیحات (.*)$",
 	"^قوانین (.*)$",
-	"^[#!/]([Ss]etphoto)$",
+	"^عکس گروه$",
 	"^[#!/]([Ss]etusername) (.*)$",
 	"^حذف$",
 	"^قفل کردن (.*)$",
 	"^باز کردن (.*)$",
 	"^سکوت ([^%s]+)$",
-	"^[#!/]([Uu]nmute) ([^%s]+)$",
+	"^باز کردن ([^%s]+)$",
 	"^سکوت$",
 	"^سکوت (.*)$",
-	"^[#!/]([Uu]nsilent)$",
-	"^[#!/]([Uu]nsilent) (.*)$",
+	"^آزاد$",
+	"^آزاد (.*)$",
 	"^عمومی (.*)$",
 	"^تنظیمات$",
 	"^قوانین$",
-	"^[#!/]([Ss]etflood) (%d+)$",
-	"^[#!/]([Cc]lean) (.*)$",
+	"^حساسیت (%d+)$",
+	"^حذف (.*)$",
 	"^راهنما$",
 	"^لیست سکوت$",
 	"^لیست سکوت$",
@@ -2759,7 +2759,7 @@ return {
 	"%[(video)%]",
 	"%[(audio)%]",
 	"%[(contact)%]",
-	"^!!tgservice (.+)$",
+	"^خدمات تی جی (.+)$",
   },
   run = run,
   pre_process = pre_process
