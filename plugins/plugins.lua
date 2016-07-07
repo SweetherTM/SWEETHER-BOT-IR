@@ -42,7 +42,7 @@ local function list_all_plugins(only_enabled)
       text = text..nsum..'. '..v..'  '..status..'\n'
     end
   end
-  local text = text..'\nThere are '..nsum..' plugins installed.\n'..nact..' plugins enabled and '..nsum-nact..' disabled'
+  local text = text..'\nتعداد '..nsum..' پلاگین نصب شده است.\n'..nact..' پلاگین وصل شده است و '..nsum-nact..' پلاگین قطع شده است.'
   return text
 end
 
@@ -67,7 +67,7 @@ local function list_plugins(only_enabled)
       text = text..v..'  '..status..'\n'
     end
   end
-  local text = text..'\n'..nact..' plugins enabled from '..nsum..' plugins installed.'
+  local text = text..'\n'..nact..' وصل شده است از و '..nsum..' پلاگین نصب شده است'
   return text
 end
 
@@ -82,7 +82,7 @@ local function enable_plugin( plugin_name )
   print('checking if '..plugin_name..' exists')
   -- Check if plugin is enabled
   if plugin_enabled(plugin_name) then
-    return 'Plugin '..plugin_name..' is enabled'
+    return 'پلاگین '..plugin_name..' وصل شد'
   end
   -- Checks if plugin exists
   if plugin_exists(plugin_name) then
@@ -105,7 +105,7 @@ local function disable_plugin( name, chat )
   local k = plugin_enabled(name)
   -- Check if plugin is enabled
   if not k then
-    return 'Plugin '..name..' not enabled'
+    return 'پلاگین '..name..' قطع شد.'
   end
   -- Disable and reload
   table.remove(_config.enabled_plugins, k)
@@ -152,7 +152,7 @@ end
 
 local function run(msg, matches)
   -- Show the available plugins 
-  if matches[1] == '!plugins' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1] == 'پلاگین ها' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return list_all_plugins()
   end
 
@@ -181,7 +181,7 @@ local function run(msg, matches)
 
   -- Disable a plugin
   if matches[1] == '-' and is_sudo(msg) then --after changed to moderator mode, set only sudo
-    if matches[2] == 'plugins' then
+    if matches[2] == 'پلاگین ها' then
     	return 'This plugin can\'t be disabled'
     end
     print("disable: "..matches[2])
@@ -208,7 +208,7 @@ return {
           "!plugins ? : reloads all plugins." },
           },
   patterns = {
-    "^!plugins$",
+    "^پلاگین ها$",
     "^!plugins? (+) ([%w_%.%-]+)$",
     "^!plugins? (-) ([%w_%.%-]+)$",
     "^!plugins? (+) ([%w_%.%-]+) (chat)",
