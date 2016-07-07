@@ -1,6 +1,6 @@
 local function run(msg, matches)
-local ping = 'I'm Online （ಠ_ಠ  )'
-return ping
+local text =  "I'm Online （ಠ_ಠ  )"
+return text
 end
 return {
   patterns = {
