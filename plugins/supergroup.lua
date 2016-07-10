@@ -1033,7 +1033,7 @@ function show_supergroup_settingsmod(msg, target)
   local gp_type = data[tostring(msg.to.id)]['group_type']
   
   local settings = data[tostring(target)]['settings']
-  local text = "____________________\n⬇️⚙تنظیمات سوپر گروه⚙⬇️\n____________________\n🔰  لینک: "..settings.lock_link.."\n🔰 اطلاعات تماس: "..settings.lock_contacts.."\n🔰 حساسیت اسپم: "..settings.flood.."\n🔰 مقدار حساسیت اسپم: "..NUM_MSG_MAX.."\n🔰 سپم: "..settings.lock_spam.."\n🔰 فارسی/عربی: "..settings.lock_arabic.."\n🔰 عضویت با لینک: "..settings.lock_member.."\n🔰 پیام های چپ به راست: "..settings.lock_rtl.."\n🔰 خدمات تی جی: "..settings.lock_tgservice.."\n🔰 استیکر: "..settings.lock_sticker.."\n🔰 تگ(#): "..settings.tag.."\n🔰 شکلک: "..settings.emoji.."\n🔰 انگلیسی: "..settings.english.."\n🔰 فروارد: "..settings.fwd.."\n🔰 ریپلای: "..settings.reply.."\n🔰 عضویت: "..settings.join.."\n 🔰 نام کاربری(@): "..settings.username.."\n🔰 رسانه ها: "..settings.media.."\n🔰 فحش: "..settings.fosh.."\n🔰 خارج شدن: "..settings.leave.."\n🔰 ربات ها: "..bots_protection.."\n🔰 اپراتور: "..settings.operator.."\n____________________\n⬇️⚙آسان و شیرین و سریعتر⚙⬇️\n____________________\n🔰 اتحاد: "..settings.etehad.."\n🔰 قفل همه: "..settings.all.."\n____________________\n⬇️درباره گروه⬇️\n____________________\n🔰 نوع گروه: "..gp_type.."\n🔰 عمومی: "..settings.public.."\n🔰 سخت گیری: "..settings.strict.."\n____________________\nBot Version: V 2.9\n👑Sweether TM👑\nID:\n@SweetherTM"
+  local text = "____________________\n⬇️⚙تنظیمات سوپر گروه⚙⬇️\n____________________\n🔰  لینک: "..settings.lock_link.."\n🔰 اطلاعات تماس: "..settings.lock_contacts.."\n🔰 حساسیت اسپم: "..settings.flood.."\n🔰 مقدار حساسیت اسپم: "..NUM_MSG_MAX.."\n🔰 سپم: "..settings.lock_spam.."\n🔰 فارسی/عربی: "..settings.lock_arabic.."\n🔰 عضویت با لینک: "..settings.lock_member.."\n🔰 پیام های چپ به راست: "..settings.lock_rtl.."\n🔰 خدمات تی جی: "..settings.lock_tgservice.."\n🔰 استیکر: "..settings.lock_sticker.."\n🔰 تگ(#): "..settings.tag.."\n🔰 شکلک: "..settings.emoji.."\n🔰 انگلیسی: "..settings.english.."\n🔰 فروارد: "..settings.fwd.."\n🔰 ریپلای: "..settings.reply.."\n🔰 عضویت: "..settings.join.."\n 🔰 نام کاربری(@): "..settings.username.."\n🔰 رسانه ها: "..settings.media.."\n🔰 فحش: "..settings.fosh.."\n🔰 خارج شدن: "..settings.leave.."\n🔰 ربات ها: "..bots_protection.."\n🔰 اپراتور: "..settings.operator.."\n____________________\n⬇️⚙سوییج های آسان و سریع⚙⬇️\n___________________\n🔰 اتحاد: "..settings.etehad.."\n🔰 قفل همه: "..settings.all.."\n____________________\n⬇️درباره گروه⬇️\n____________________\n🔰 نوع گروه: "..gp_type.."\n🔰 عمومی: "..settings.public.."\n🔰 سخت گیری: "..settings.strict.."\n____________________\nBot Version: V 2.9\n👑Sweether TM👑\nID:\n@SweetherTM"
   return text
 end
 
@@ -2617,7 +2617,7 @@ local function run(msg, matches)
 			return muted_user_list(chat_id)
 		end
 
-		if matches[1] == 'تنضیمات' and is_momod(msg) then
+		if matches[1] == 'تنظیمات' and is_momod(msg) then
 			local target = msg.to.id
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup settings ")
 			return show_supergroup_settingsmod(msg, target)
@@ -2631,7 +2631,7 @@ local function run(msg, matches)
 		if matches[1] == 'راهنما' and not is_owner(msg) then
 			text = "شما برای مشاهده راهنما دسترسی ندارید."
 			reply_msg(msg.id, text, ok_cb, false)
-		elseif matches[1] == 'help' and is_owner(msg) then
+		elseif matches[1] == 'راهنما' and is_owner(msg) then
 			local name_log = user_print_name(msg.from)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /superhelp")
 			return super_help()
